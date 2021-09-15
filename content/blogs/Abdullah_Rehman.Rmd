@@ -1,14 +1,16 @@
 ---
-title: 'MAM 2022 Pre-programme Assignment'
-author: "ABDULLAH REHMAN"
-date: "Last edited `r format(Sys.time(),'%d %B %Y')`"
-output:
-  html_document:
-    theme: yeti
-    highlight: zenburn
-    toc: yes
-    toc_float: yes
+categories:
+- ""
+- ""
+date: "2017-10-31T22:26:09-05:00"
+description: Lorem Etiam Nullam
+draft: false
+image: pic09.jpg
+keywords: ""
+slug: precourse
+title: Magna
 ---
+
 
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
