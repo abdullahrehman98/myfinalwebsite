@@ -9,7 +9,7 @@ params:
     buttonText: Get Started
     subtitle: |-
       DESIGNED BY ABDULLAH REHMAN.
-    title: Welcome to my website
+    title: Welcome, my name is Abdullah
   blog: {}
   contact:
     address:
@@ -80,7 +80,7 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pic01.jpg
+      - image: pak1.jpg
         subtitle: Ipsum Dolor Sit Amet
         title: Aliquam
         url: blogs/aliquam
