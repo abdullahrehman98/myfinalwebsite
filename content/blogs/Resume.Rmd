@@ -17,6 +17,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## CV
 
-```{r picture, echo=FALSE, out.width="200%"}
+```{r picture, echo=FALSE, out.width="100%",out.height="100%"}
 knitr::include_graphics("/img/Resume.pdf", error = FALSE)
 ```
