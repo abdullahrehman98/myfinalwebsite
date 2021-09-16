@@ -10,7 +10,7 @@ keywords: ""
 slug: about_me
 title: A Brief Introduction
 ---
-![](<iframe src="https://giphy.com/embed/xT9IgH0fInLY2LCDPa" width="480" height="352" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/trippy-glitch-space-xT9IgH0fInLY2LCDPa">)
+<iframe src="https://giphy.com/embed/xT9IgH0fInLY2LCDPa" width="480" height="352" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/trippy-glitch-space-xT9IgH0fInLY2LCDPa">
 
 # Short Biography
 ## A bit about me
