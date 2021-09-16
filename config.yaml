@@ -72,8 +72,8 @@ params:
         url: blogs
       - name: My Art Blog
         url: blogs/myartblog
-        image: pak1.jpg
       - name: CV
+        image: pic02.jpg
         url: blogs/resume
     menu: Menu
     subtitle: By HTML5 Up
