@@ -38,7 +38,19 @@ My main artworks are oil on canvas some of my favourites which I am attaching be
 
 ```{r, out.width="50%",echo=FALSE}
 knitr::include_graphics("/img/ART/IMG_1930.jpg", error = FALSE)
+# knitr::include_graphics("/img/ART/IMG_1932.jpg", error = FALSE)
+# knitr::include_graphics("/img/ART/IMG_5638.jpg", error = FALSE)
+
+```
+
+```{r, out.width="50%",echo=FALSE}
+
 knitr::include_graphics("/img/ART/IMG_1932.jpg", error = FALSE)
+
+```
+
+```{r, out.width="50%",echo=FALSE}
+
 knitr::include_graphics("/img/ART/IMG_5638.jpg", error = FALSE)
 
 ```
