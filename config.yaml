@@ -5,7 +5,7 @@ theme: forty
 googleAnalytics: ''
 disqusShortname: ''
 params:
-  banner:
+  banner: banner.gif
     buttonText: Dive In
     subtitle: |-
       My name is Abdullah
