@@ -88,14 +88,14 @@ params:
         subtitle: The lens of my paintbrush
         title: My Art Blog
         url: blogs/myartblog
+      - image: pic03.jpg
+        subtitle: An extract from one of my data projects
+        title: Data Analytics
+        url: blogs/data
       - image: pak2.gif
         subtitle: A glimpse of all my adventures to date
         title: My Travel Blog
         url: blogs/travel
-      - image: data02.gif
-        subtitle: An extract from one of my data projects
-        title: Data Analytics
-        url: blogs/data
       # - image: pic05.jpg
       #   subtitle: Ipsum Dolor Sit Amet
       #   title: Consequat
