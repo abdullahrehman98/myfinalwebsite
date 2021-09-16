@@ -72,6 +72,7 @@ params:
         url: blogs
       - name: My Art Blog
         url: blogs/myartblog
+        image: pak1.jpg
       - name: CV
         url: blogs/resume
     menu: Menu
