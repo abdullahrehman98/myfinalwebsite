@@ -5,7 +5,6 @@ categories:
 date: "2017-10-31T22:26:13-05:00"
 description: This a collection of some of my published artworks to data.
 draft: false
-image: pic08.jpg
 keywords: ""
 slug: myartblog
 title: Art Portfolio
@@ -14,6 +13,7 @@ title: Art Portfolio
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+#image: pic08.jpg
 ```
 
 

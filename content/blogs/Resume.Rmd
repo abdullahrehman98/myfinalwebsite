@@ -15,9 +15,9 @@ title: My CV
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## CV
+> CV
 
 ```{r picture, echo=FALSE, out.width="100%",fig.align="center"}
  
-knitr::include_graphics("/img/Resumetheme.pdf", error = FALSE)
+# knitr::include_graphics("/img/Resumetheme.pdf", error = FALSE)
 ```
