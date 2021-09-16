@@ -57,7 +57,7 @@ params:
         label: LinkedIn
         url: https://www.linkedin.com
   image: ''
-  name: Your name
+  name: Abdullah Rehman
   navigation:
     button1:
       - name: Get Started
