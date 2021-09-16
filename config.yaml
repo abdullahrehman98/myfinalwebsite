@@ -88,7 +88,7 @@ params:
         subtitle: The lens of my paintbrush
         title: My Art Blog
         url: blogs/myartblog
-      - image: data01.gif
+      - image: data02.gif
         subtitle: An extract from one of my data projects
         title: Data Analytics
         url: blogs/data
