@@ -1,0 +1,40 @@
+---
+categories:
+- ""
+- ""
+date: "2017-10-31T22:42:51-05:00"
+description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
+  sed nunc rhoncus condimentum sem.
+draft: false
+image: pic07.jpg
+keywords: ""
+slug: about_me
+title: A Brief Introduction
+---
+
+# Short Biography
+## A bit about me
+
+My name is Abdullah Rehman as I have mentioned numerous times by now in this report. I am an incoming MAM student looking to pursue my passion for consulting. I was brought up in Pakistan but always had roots in England due to my extensive family here so decided to come her for my undergraduate studies.
+
+I did my undergrad from [**University College London**](https://www.ucl.ac.uk) in *Chemical Engineering* and graduated with a first class honors. After my undergrad, I was offered a job at Accenture which I was unable to take at the time due to a few serious family problems back home and I left England for 2 years until now. I am now keen on taking a full time consulting role and looking to do my best to earn a spot in the top tier firms. 
+
+During my spare time, I love to paint. I have an online profile at [Saatchi Art Gallery](https://www.saatchiart.com/account/artworks/1107889). I am attaching a few of them below and the rest can be seen on the link mentioned. I am also an avid chocolate enthusiast, I can skip any meal of the day except for dessert. 
+
+
+```{r picture, echo=FALSE, out.width="70%"}
+knitr::include_graphics("/img/IMG_1878.jpg", error = FALSE)
+```
+
+Figure 1.1 and 1.2 are some of my artworks which are oil on canvas.
+
+Below is a list of some of my favourite books. Although I don't get the time to read much these days, these books are still some of my favorites:
+
+* When Breath Becomes Air
+     * by Paul Kalanithi
+* The Kite Runner
+     * by Khaled Hosseini
+* Three Cups of Tea
+     * by Greg Mortenson and David Oliver Relin
+
+Thank you for taking the time out to read a bit about myself. I look forward to starting this course and working with you.

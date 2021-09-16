@@ -62,16 +62,16 @@ params:
     button1:
       - name: Get Started
         url: blogs
-    button2:
-      - name: Log In
-        url: '#'
+    # button2:
+    #   - name: Log In
+    #     url: '#'
     links:
       - name: Home
         url: '#'
       - name: Blogs
         url: blogs
-      - name: Generic Blog
-        url: blogs/ipsum
+      - name: My Art Blog
+        url: blogs/myartblog
       - name: Elements
         url: elements.html
     menu: Menu
@@ -80,21 +80,21 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: pak1.jpg
-        subtitle: A glimpse of all my adventures to date
-        title: My Travel Blog
-        url: blogs/aliquam
+      - image: AboutMe.jpg
+        subtitle: A brief introduction about me
+        title: About Me
+        url: blogs/about_me
       - image: pic02.jpg
         subtitle: The lens of my paintbrush
         title: My Art Blog
         url: blogs/myartblog
       - image: pic03.jpg
         subtitle: Lorem Etiam Nullam
-        title: My Precourse Assignment
-        url: blogs/precourse
-      - image: pic04.jpg
-        subtitle: Nisl Sed Aliquam
-        title: Ipsum
+        title: Data Analytics Assignment
+        url: blogs/data
+      - image: pak1.jpg
+        subtitle: A glimpse of all my adventures to date
+        title: My Travel Blog
         url: blogs/ipsum
       - image: pic05.jpg
         subtitle: Ipsum Dolor Sit Amet
