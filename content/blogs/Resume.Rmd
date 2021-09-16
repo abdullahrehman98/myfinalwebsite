@@ -5,7 +5,7 @@ categories:
 date: "2017-10-31T21:28:43-05:00"
 description: ""
 draft: false
-# image: pic10.jpg
+image: pic11.jpg
 keywords: ""
 slug: resume
 title: My CV
@@ -16,7 +16,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## CV
+```{r, out.width="0.3\\linewidth", include=TRUE, fig.align="center", fig.cap=c("your caption"), echo=FALSE}
+knitr::include_graphics("/img/Resume.pdf", error = FALSE)
+```
 
 ```{r picture, echo=FALSE, out.width="100%",out.height="100%"}
-knitr::include_graphics("/img/Resume.pdf", error = FALSE)
+# 
+# knitr::include_graphics("/img/Resume.pdf", error = FALSE)
 ```

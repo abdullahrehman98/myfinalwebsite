@@ -1,6 +1,6 @@
 baseURL: https://abdullah-rehman-9879be.netlify.app/
 languageCode: en-us
-title: Forty
+title: Abdullah
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
@@ -15,7 +15,7 @@ params:
     address:
       - city: London, NW1 6NG
         country: United Kingdom
-        street: Flat 15 Brunswick House,94-96 Balcombe Street,
+        street: Flat 15 Brunswick House, 94-96 Balcombe Street,
         title: Address
     buttonClear: Clear
     buttonSend: Send message
@@ -105,13 +105,8 @@ params:
       #   title: Etiam
       #   url: blogs/ipsum
   two:
-    buttonText: Get Started
+    buttonText: Take me there
     enable: yes
-    subtitle: "Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero.
-      \n    Mauris aliquet magna magna sed nunc rhoncus pharetra. \n    Pellentesque
-      condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia
-      pellentesque lorem ipsum dolor. \n    Nullam et orci eu lorem consequat tincidunt.
-      Vivamus et sagittis libero.\n    Mauris aliquet magna magna sed nunc rhoncus
-      amet pharetra et feugiat tempus."
+    subtitle: "Navigate to my blogs as well as my resume"
     title: Massa libero
     url: blogs

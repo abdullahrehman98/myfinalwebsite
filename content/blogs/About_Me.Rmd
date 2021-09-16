@@ -3,8 +3,7 @@ categories:
 - ""
 - ""
 date: "2017-10-31T22:42:51-05:00"
-description: Nullam et orci eu lorem consequat tincidunt vivamus et sagittis magna
-  sed nunc rhoncus condimentum sem.
+description: Find out a bit more about me
 draft: false
 image: pic07.jpg
 keywords: ""
@@ -31,4 +30,4 @@ Below is a list of some of my favourite books. Although I don't get the time to 
 * Three Cups of Tea
      * by Greg Mortenson and David Oliver Relin
 
-Thank you for taking the time out to read a bit about myself. I look forward to starting this course and working with you.
+Thank you for taking the time out to read a bit about myself.
