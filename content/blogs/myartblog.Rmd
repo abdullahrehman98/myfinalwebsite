@@ -11,7 +11,7 @@ draft: false
 image: pic08.jpg
 keywords: ""
 slug: myartblog
-title: Tempus
+title: Art Portfolio
 ---
 
 
@@ -20,6 +20,9 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 
-```{r photos}
+```{r photos, out.width="70%"}
 knitr::include_graphics("/img/ART/IMG_1930.jpg", error = FALSE)
+knitr::include_graphics("/img/ART/IMG_5435.jpg", error = FALSE)
+knitr::include_graphics("/img/ART/IMG_5638.jpg", error = FALSE)
+
 ```
