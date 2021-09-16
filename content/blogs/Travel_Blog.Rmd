@@ -1,0 +1,35 @@
+---
+categories:
+- ""
+- ""
+date: "2017-10-31T21:28:43-05:00"
+description: ""
+draft: false
+image: pictravel.JPG
+keywords: ""
+slug: travel
+title: My Travel Blog
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+#wasin pic10
+```
+
+One of my biggest passions is travel and through my life, I have travelled to a number of countries.
+
+# Pakistan
+
+My latest trip was in Pakistan where I went upnorth to the beautiful area of Kashmir. Here are some of my favorite pictures from here:
+
+
+# France
+
+# Switzerland
+
+# Scotland
+
+# India
+
+

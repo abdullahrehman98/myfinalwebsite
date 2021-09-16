@@ -95,7 +95,7 @@ params:
       - image: pak2.gif
         subtitle: A glimpse of all my adventures to date
         title: My Travel Blog
-        url: blogs/ipsum
+        url: blogs/travel
       # - image: pic05.jpg
       #   subtitle: Ipsum Dolor Sit Amet
       #   title: Consequat
