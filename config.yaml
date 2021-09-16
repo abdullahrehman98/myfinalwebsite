@@ -1,26 +1,26 @@
 baseURL: https://abdullah-rehman-9879be.netlify.app/
 languageCode: en-us
-title: Abdullah Rehman
+title: Forty
 theme: forty
 googleAnalytics: ''
 disqusShortname: ''
 params:
   banner:
-    buttonText: Get Started
+    buttonText: Dive In
     subtitle: |-
-      DESIGNED BY ABDULLAH REHMAN.
-    title: Welcome, my name is Abdullah 
+      My name is Abdullah
+    title: Hello, Bonjour, Hola, Nǐn hǎo, Salam, Yassas 
   blog: {}
   contact:
     address:
-      - city: City, ST 00000
-        country: Country
-        street: Street
+      - city: London, NW1 6NG
+        country: United Kingdom
+        street: Flat 15 Brunswick House,94-96 Balcombe Street,
         title: Address
     buttonClear: Clear
     buttonSend: Send message
     email:
-      - email: example@domain.com
+      - email: abdullahrehmans@gmail.com
         title: Email
     enable: yes
     phone:
