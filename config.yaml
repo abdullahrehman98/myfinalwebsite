@@ -56,7 +56,7 @@ params:
       - icon: fa-linkedin
         label: LinkedIn
         url: https://www.linkedin.com
-  image: IMG_0305.jpg
+  image: "IMG_0305.jpg""
   name: Abdullah Rehman
   navigation:
     button1:
