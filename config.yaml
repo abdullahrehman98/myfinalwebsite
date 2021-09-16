@@ -88,9 +88,9 @@ params:
         subtitle: The lens of my paintbrush
         title: My Art Blog
         url: blogs/myartblog
-      - image: pic03.jpg
-        subtitle: Lorem Etiam Nullam
-        title: Data Analytics Assignment
+      - image: data01.gif
+        subtitle: An extract from one of my data projects
+        title: Data Analytics
         url: blogs/data
       - image: pak2.gif
         subtitle: A glimpse of all my adventures to date
@@ -107,6 +107,6 @@ params:
   two:
     buttonText: Take me there
     enable: yes
-    subtitle: "Navigate to my blogs as well as my resume"
-    title: Massa libero
-    url: blogs
+    subtitle: "Navigate to my resume"
+    title: Curriculum Vitae
+    url: blogs/resume
