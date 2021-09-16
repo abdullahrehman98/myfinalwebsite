@@ -5,7 +5,7 @@ categories:
 date: "2017-10-31T22:26:13-05:00"
 description: This a collection of some of my published artworks to data.
 draft: false
-image: pic08.jpg
+image: IMG_1878.jpg
 keywords: ""
 slug: myartblog
 title: Art Portfolio
@@ -19,20 +19,26 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 My love for art stems from growing up in a household where my grandmother was an artist. She is one of my main inspirations for my artworks. 
-The artworks below are some of her work
 
-```{r photos,echo=FALSE, out.width="30%"}
+The artworks below are some of her work:
+
+```{r photos,echo=FALSE, out.width="40%"}
 #out.width="70%"
 knitr::include_graphics("/img/ART/IMG_5567.jpg", error = FALSE)
+
 knitr::include_graphics("/img/ART/IMG_5564.jpg", error = FALSE)
 ```
 
+Growing on this, I started getting into art from a young age. My love for art took me around various art museums as well as weekly visits to the Tate Modern now that I am in London. 
 
-The artworks below are my own work:
+I was able to set up an onlinr profile at [**Saatchi Art Gallery**](https://www.saatchiart.com/account/artworks/1107889). You can have a look at my art portfolio through the link above.
 
-```{r, out.width="70%",echo=FALSE}
+My main artworks are oil on canvas some of my favourites which I am attaching below.
+
+
+```{r, out.width="50%",echo=FALSE}
 knitr::include_graphics("/img/ART/IMG_1930.jpg", error = FALSE)
-knitr::include_graphics("/img/ART/IMG_5435.jpg", error = FALSE)
+knitr::include_graphics("/img/ART/IMG_1932.jpg", error = FALSE)
 knitr::include_graphics("/img/ART/IMG_5638.jpg", error = FALSE)
 
 ```
