@@ -84,7 +84,7 @@ params:
         subtitle: A brief introduction about me
         title: About Me
         url: blogs/about_me
-      - image: pic02.jpg
+      - image: artblog02.gif
         subtitle: The lens of my paintbrush
         title: My Art Blog
         url: blogs/myartblog
