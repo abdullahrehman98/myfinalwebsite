@@ -19,13 +19,13 @@ library(janitor)
 library(knitr)
 library(ggplot2)
 library(kableExtra)
-
+knitr::opts_chunk$set(echo = TRUE)
 ```
 # Brexit vote analysis
 
-We will have a look at the results of the 2016 Brexit vote in the UK. First we read the data using `read_csv()` and have a quick glimpse at the data
+We will have a look at the results of the 2016 Brexit vote in the UK. 
 
-```{r load_brexit_data, warning=FALSE, message=FALSE}
+```{r load_brexit_data, warning=FALSE, message=FALSE,echo=FALSE}
 brexit_results <- read_csv(here::here("data","brexit_results.csv"))
 
 glimpse(brexit_results)
@@ -33,15 +33,8 @@ glimpse(brexit_results)
 
 The data comes from [Elliott Morris](https://www.thecrosstab.com/), who cleaned it and made it available through his [DataCamp class on analysing election and polling data in R](https://www.datacamp.com/courses/analyzing-election-and-polling-data-in-r).
 
-Our main outcome variable (or y) is `leave_share`, which is the percent of votes cast in favour of Brexit, or leaving the EU. Each row is a UK [parliament constituency](https://en.wikipedia.org/wiki/United_Kingdom_Parliament_constituencies).
-
-To get a sense of the spread, or distribution, of the data, we can plot a histogram, a density plot, and the empirical cumulative distribution function of the leave % in all constituencies.
 
 ```{r brexit_histogram1, warning=FALSE, message=FALSE,echo=FALSE, out.width="100%"}
-# 
-# knitr::include_graphics(here::here("images", "brexit.png"), error = FALSE)
-# knitr::include_graphics(here::here("images", "brexit.png"), error = FALSE)
-
 
 brexit_results%>%
   
