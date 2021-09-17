@@ -80,7 +80,7 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: AboutMe.jpg
+      - image: AboutMe.gif
         subtitle: A brief introduction about me
         title: About Me
         url: blogs/about_me
@@ -88,7 +88,7 @@ params:
         subtitle: The lens of my paintbrush
         title: My Art Blog
         url: blogs/myartblog
-      - image: pic03.jpg
+      - image: data03.gif
         subtitle: An extract from one of my data projects
         title: Data Analytics
         url: blogs/data
