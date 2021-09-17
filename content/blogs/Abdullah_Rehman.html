@@ -16,10 +16,7 @@ title: Applied Statistics Assignment
 
 <div id="brexit-vote-analysis" class="section level1">
 <h1>Brexit vote analysis</h1>
-<p>We will have a look at the results of the 2016 Brexit vote in the UK. First we read the data using <code>read_csv()</code> and have a quick glimpse at the data</p>
-<pre class="r"><code>brexit_results &lt;- read_csv(here::here(&quot;data&quot;,&quot;brexit_results.csv&quot;))
-
-glimpse(brexit_results)</code></pre>
+<p>We will have a look at the results of the 2016 Brexit vote in the UK.</p>
 <pre><code>## Rows: 632
 ## Columns: 11
 ## $ Seat        &lt;chr&gt; &quot;Aldershot&quot;, &quot;Aldridge-Brownhills&quot;, &quot;Altrincham and Sale W…
@@ -34,25 +31,8 @@ glimpse(brexit_results)</code></pre>
 ## $ degree      &lt;dbl&gt; 13.870661, 9.974114, 28.600135, 9.336294, 18.775591, 6.085…
 ## $ age_18to24  &lt;dbl&gt; 9.406093, 7.325850, 6.437453, 7.747801, 5.734730, 8.209863…</code></pre>
 <p>The data comes from <a href="https://www.thecrosstab.com/">Elliott Morris</a>, who cleaned it and made it available through his <a href="https://www.datacamp.com/courses/analyzing-election-and-polling-data-in-r">DataCamp class on analysing election and polling data in R</a>.</p>
-<p>Our main outcome variable (or y) is <code>leave_share</code>, which is the percent of votes cast in favour of Brexit, or leaving the EU. Each row is a UK <a href="https://en.wikipedia.org/wiki/United_Kingdom_Parliament_constituencies">parliament constituency</a>.</p>
-<p>To get a sense of the spread, or distribution, of the data, we can plot a histogram, a density plot, and the empirical cumulative distribution function of the leave % in all constituencies.</p>
 <p><img src="/blogs/Abdullah_Rehman_files/figure-html/brexit_histogram1-1.png" width="100%" /><img src="/blogs/Abdullah_Rehman_files/figure-html/brexit_histogram1-2.png" width="100%" />
 We can also create a scatterplot between these two variables using <code>geom_point</code>. We also add the best fit line, using <code>geom_smooth(method = "lm")</code>.</p>
-<pre class="r"><code>ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
-  geom_point(alpha=0.3) +
-  
-  # add a smoothing line, and use method=&quot;lm&quot; to get the best straight-line
-  geom_smooth(method = &quot;lm&quot;) + 
-  
-  # use a white background and frame the plot with a black box
-  theme_bw() +
-  labs(x=&quot;Born in the UK&quot;,
-       y=&quot;Leave Share&quot;,
-       title = &quot;Realtionship b/w the proportion of native born residents &amp; leave share&quot;,
-       subtitle = &quot;Scatterplot&quot;,
-       caption = &#39;Figure 3.4&#39;)+
-  theme(plot.caption = element_text(hjust = 0))</code></pre>
 <p><img src="/blogs/Abdullah_Rehman_files/figure-html/brexit_immigration_plot-1.png" width="672" /></p>
-<pre class="r"><code>  NULL</code></pre>
 <pre><code>## NULL</code></pre>
 </div>
