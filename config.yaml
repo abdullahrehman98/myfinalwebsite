@@ -70,8 +70,14 @@ params:
         url: '#'
       - name: Blogs
         url: blogs
+      - name: About Me
+        url: blogs/about_me
       - name: My Art Blog
         url: blogs/myartblog
+      - name: My Data Project
+        url: blogs/data
+      - name: My Travel Blog
+        url: blogs/travel
       - name: CV
         url: blogs/resume
     menu: Menu
