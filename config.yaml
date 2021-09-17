@@ -80,7 +80,7 @@ params:
   tiles:
     enable: yes
     showcase:
-      - image: AboutMe2.gif
+      - image: AboutMe3.gif
         subtitle: A brief introduction about me
         title: About Me
         url: blogs/about_me
