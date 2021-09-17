@@ -25,139 +25,7 @@ library(kableExtra)
 knitr::opts_chunk$set(echo = FALSE,message = FALSE,warning = FALSE)
 
 ```
-
-
-
-
-# Task 1: Short Biography
-## By Abdullah Rehman
-
-My name is Abdullah Rehman as I have mentioned numerous times by now in this report. I am an incoming MAM student looking to pursue my passion for consulting. I was brought up in Pakistan but always had roots in England due to my extensive family here so decided to come her for my undergraduate studies.
-
-I did my undergrad from [**University College London**](https://www.ucl.ac.uk) in *Chemical Engineering* and graduated with a first class honors. After my undergrad, I was offered a job at Accenture which I was unable to take at the time due to a few serious family problems back home and I left England for 2 years until now. I am now keen on taking a full time consulting role and looking to do my best to earn a spot in the top tier firms. 
-
-During my spare time, I love to paint. I have an online profile at [Saatchi Art Gallery](https://www.saatchiart.com/account/artworks/1107889). I am attaching a few of them below and the rest can be seen on the link mentioned. I am also an avid chocolate enthusiast, I can skip any meal of the day except for dessert. 
-
-
-```{r picture, echo=FALSE, out.width="70%"}
-knitr::include_graphics("/img/IMG_1878.jpg", error = FALSE)
-```
-
-Figure 1.1 and 1.2 are some of my artworks which are oil on canvas.
-
-Below is a list of some of my favourite books. Although I don't get the time to read much these days, these books are still some of my favorites:
-
-* When Breath Becomes Air
-     * by Paul Kalanithi
-* The Kite Runner
-     * by Khaled Hosseini
-* Three Cups of Tea
-     * by Greg Mortenson and David Oliver Relin
-
-Thank you for taking the time out to read a bit about myself. I look forward to starting this course and working with you.
-
-
-# Task 2: `gapminder` country comparison
-
-To get a glimpse of the gapminder dataframe, namely to see the variable names, variable types, etc., we use the `glimpse` function. We also want to have a look at the first 20 rows of data.
-
-The data has been assigned to a vector and structred into a table with detailed headings for ease of reading and labelled as Table 2.1. This shows the first 20 rows of data for the gapminder dataset. I updated the format of the table using the kableExtra package you recommended.
-
-```{r}
-glimpse(gapminder)
-
-head_gap<- head(gapminder, 20)
-colnames(head_gap) <- c("Country","Continent","Year","Life Expectancy","Population","GDP per Capita")# look at the first 20 rows of the dataframe
-
-# kable(head_gap,
-#       col.names = c("Country","Continent","Year","Life Expectancy","Population","GDP per Capita"),
-#       align = "cccccc",
-#       caption = "Table 2.1")
-head_gap %>%
-  kbl(caption = "Table 2.1") %>%
-  kable_classic(full_width = F, html_font = "Cambria")      
-
-```
-
-Our task is to produce two graphs of how life expectancy has changed over the years for the `country` and the `continent` we come from.
-
-
-We will now produce two graphs of how life expectancy has changed over the years for the country and continent where I come from (i.e. Pakistan). First the data was filtered for two datasets;one filtering according to country and one filtering according to continent. 
-
-```{r}
-country_data <- gapminder %>% 
-            filter(country == "Pakistan") # just choosing Greece, as this is where I come from
-
-continent_data <- gapminder %>% 
-            filter(continent == "Asia")
-```
-
-
-## Life Expectancy in Pakistan over the years
-
-First we plot the life expectancy of Pakistan over the years and this was plotted using the linear model inorder to get a better line of best fit. 
-
-```{r, lifeExp_one_country_plus_label, results='hide'}
-plot1 <- ggplot(country_data, aes(x = year, y = lifeExp))+
-   geom_point() +
-   geom_smooth(se = FALSE,method = "lm")+
-  labs( title = "Yearly Trend for Life Expectancy in Pakistan",
-        caption = "Figure 2.1",
-        x= "Year",
-        y= "Life Expectancy")+
-  theme(plot.caption=element_text(hjust = 0))
-  
-  NULL 
- plot1
-```
-
-
-## Life Expectancy in Asia over the years
-
-Secondly, we produce a plot for all countries in Asia. The `country` variable has been assigned to the colour aesthetic as well as to the `group` aesthetic, so all points for each country are grouped together.
-
-```{r lifeExp_one_continent, results='hide'}
- ggplot(continent_data, mapping = aes(
-   x = year  , y = lifeExp , color=country , group = country))+
-   geom_line() + 
-  geom_smooth(se = FALSE) +
-  labs(caption = "Figure 2.2",
-       x="Year",
-       y="Life Expectancy",
-       title = "Life Expectancy for Asia by country")+
-  theme(plot.caption = element_text(hjust = 0))
-  NULL
-```
-
-
-## Life Expectancy over time faceted by continent
-
-Finally, using the original `gapminder` data, we produce a life expectancy over time graph, grouped (or faceted) by continent.
-
-```{r lifeExp_facet_by_continent}
- ggplot(data = gapminder , mapping = aes(x = year, y = lifeExp  , colour= continent))+
-   geom_point()+ 
-   geom_smooth(se = FALSE, method = "lm") +
-   facet_wrap(~continent) +
-   labs(caption = 'Figure 2.3',
-        x='Year',
-        y='Life Expectancy')+
-   theme(legend.position="none",
-         plot.caption = element_text(hjust = 0)) + #remove all legends
-   NULL
-```
-
-
-> Given these trends, what can you say about life expectancy since 1952?
-
-
-Asia and Africa are emerging economies hence the life expectancy graph shows a very steep increase and thus can be interpreted as advancements in healthcare systems and technologies. This can also be attrributed to the difference in countries like within South East Asia, there was a slow growth rate in the 20th century particualry due to post independence conflicts and countries like India, Pakistan, Bangladesh starting to develop economically in the later half of the 20th century. 
-
-In the Americas, there is a big variation among each year due to different countries. We would expect countries like Canada and USA to be higher among the life expectancy whereas the southern american countries like Peru and Brazil and Argentina would be among the lower half due to slower economic growth rates. 
-
-Oceania mainly consists of New Zealand and Australia which already had a higher life expectancy due to these being developed economies and hence showed a gradual increase in life expectancy. 
-
-# Task 3: Brexit vote analysis
+# Brexit vote analysis
 
 We will have a look at the results of the 2016 Brexit vote in the UK. First we read the data using `read_csv()` and have a quick glimpse at the data
 
@@ -173,7 +41,30 @@ Our main outcome variable (or y) is `leave_share`, which is the percent of votes
 
 To get a sense of the spread, or distribution, of the data, we can plot a histogram, a density plot, and the empirical cumulative distribution function of the leave % in all constituencies.
 
-```{r brexit_histogram1, warning=FALSE, message=FALSE}
+```{r brexit_histogram1, warning=FALSE, message=FALSE,echo=FALSE, out.width="100%"}
+# 
+# knitr::include_graphics(here::here("images", "brexit.png"), error = FALSE)
+# knitr::include_graphics(here::here("images", "brexit.png"), error = FALSE)
+
+
+brexit_results%>%
+  
+  ggplot(aes())+
+  geom_point(aes(x=con_2015,y=leave_share, color="Conservative"),alpha=0.5,size=0.8)+
+  geom_point(aes(x=lab_2015,y=leave_share,color="Labour"),alpha=0.5,size=0.8)+
+  geom_point(aes(x=ld_2015, y=leave_share,color="Lib Dems"),alpha=0.5,size=0.8)+
+  geom_point(aes(x=ukip_2015, y=leave_share,color="UKIP"),alpha=0.5,size=0.8)+
+  geom_smooth(aes(x=con_2015,y=leave_share),method=lm, color="#0087dc")+
+  geom_smooth(aes(x=lab_2015,y=leave_share),method=lm,color="#d50000")+
+  geom_smooth(aes(x=ld_2015,y=leave_share),method=lm, color="#FDBB30")+
+  geom_smooth(aes(x=ukip_2015,y=leave_share),method=lm, color="#EFE600")+
+  
+  scale_color_manual(name="",
+                     values = c("Conservative"="#0087dc",
+                                "Labour"="#d50000",
+                                "Lib Dems"="#FDBB30",
+                                "UKIP"="#EFE600"))+
+  labs(title = "How political affiliation translated to Brexit Voting", y="Leave % in the 2016 Brexit referendum", x="Party % in the UK 2015 general election")
 
 # histogram
 ggplot(brexit_results, aes(x = leave_share)) +
@@ -185,58 +76,6 @@ ggplot(brexit_results, aes(x = leave_share)) +
        y="Frequency of Constituencies")+
   theme(plot.caption = element_text(hjust = 0))
 ```
-
-
-```{r brexit_histogram2, warning=FALSE, message=FALSE}
-# density plot-- think smoothed histogram
-ggplot(brexit_results, aes(x = leave_share)) +
-  geom_density()+
-  labs(title = "Brexit Leave Share Mapped",
-       subtitle = "Density Plot",
-       caption = "Figure 3.2",
-       x= "Leave Share (Percent of votes cast in favour of Brexit)",
-       y="Frequency Density of Counstituencies")+
-  theme(plot.caption = element_text(hjust = 0))
-```
-
-
-```{r brexit_histogram3, warning=FALSE, message=FALSE}
-# The empirical cumulative distribution function (ECDF) 
-ggplot(brexit_results, aes(x = leave_share)) +
-  stat_ecdf(geom = "step", pad = FALSE) +
-  scale_y_continuous(labels = scales::percent)+
-  labs(title = "Brexit Leave Share Mapped",
-       subtitle = "Empirical Cumulative Distribution Plot",
-       caption = "Figure 3.3",
-       x= "Leave Share (Percent of votes cast in favour of Brexit)",
-       y="Frequency of Constituencies")+
-  theme(plot.caption = element_text(hjust = 0))
-  
-
-```
-
-One common explanation for the Brexit outcome was fear of immigration and opposition to the EU's more open border policy. We can check the relationship (or correlation) between the proportion of native born residents (`born_in_uk`) in a constituency and its `leave_share`. To do this, let us get the correlation between the two variables which has been processed into a table. I was having a problem with assigning rownames to the table directly so assigned them to the matrix before sending it to the kable function.
-
-```{r brexit_immigration_correlation}
-br<- brexit_results %>% 
-  select(leave_share, born_in_uk) %>% 
-  cor()
-rownames(br) <- c("Leave Share","Born in the UK")
-colnames(br) <- c('Leave Share','Born in the UK')
-
-br %>%
-  kbl(caption = "Table 3.1") %>%
-  kable_classic(full_width = F, html_font = "Cambria")    
-
-# kable(br,
-#       col.names = c('Leave Share','Born in the UK'),
-#       #row.names = c('1','Leave Share','Born in the UK'),
-#       align = "cc",
-#       caption = "Table 3.1")
-```
-
-The correlation is almost 0.5, which shows that the two variables are positively correlated.
-
 We can also create a scatterplot between these two variables using `geom_point`. We also add the best fit line, using `geom_smooth(method = "lm")`.
 
 ```{r brexit_immigration_plot,message=FALSE,warning=FALSE}
@@ -256,178 +95,3 @@ ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
   theme(plot.caption = element_text(hjust = 0))
   NULL
 ```
-
-You have the code for the plots, I would like you to revisit all of them and use the `labs()` function to add an informative title, subtitle, and axes titles to all plots.
-
-What can you say about the relationship shown above? Again, don't just say what's happening in the graph. Tell some sort of story and speculate about the differences in the patterns.
-
-> Type your answer after, and outside, this blockquote.
-
-We can see that people who were native residents voted in favour of brexit in a much higher proportion since Brexit would ensure better employment opportunites as well as less burden on the NHS making more facilties exclusive to native residents. 
-
-# Task 4: Animal rescue incidents attended by the London Fire Brigade
-
-[The London Fire Brigade](https://data.london.gov.uk/dataset/animal-rescue-incidents-attended-by-lfb) attends a range of non-fire incidents (which we call 'special services'). These 'special services' include assistance to animals that may be trapped or in distress. The data is provided from January 2009 and is updated monthly. A range of information is supplied for each incident including some location information (postcode, borough, ward), as well as the data/time of the incidents. We do not routinely record data about animal deaths or injuries.
-
-Please note that any cost included is a notional cost calculated based on the length of time rounded up to the nearest hour spent by Pump, Aerial and FRU appliances at the incident and charged at the current Brigade hourly rate.
-
-```{r load_animal_rescue_data, warning=FALSE, message=FALSE}
-
-url <- "https://data.london.gov.uk/download/animal-rescue-incidents-attended-by-lfb/8a7d91c2-9aec-4bde-937a-3998f4717cd8/Animal%20Rescue%20incidents%20attended%20by%20LFB%20from%20Jan%202009.csv"
-
-animal_rescue <- read_csv(url,
-                          locale = locale(encoding = "CP1252")) %>% 
-  janitor::clean_names()
-
-
-glimpse(animal_rescue)
-```
-One of the more useful things one can do with any data set is quick counts, namely to see how many observations fall within one category. For instance, if we wanted to count the number of incidents by year, we would either use `group_by()... summarise()` or, simply [`count()`](https://dplyr.tidyverse.org/reference/count.html)
-
-```{r, instances_by_calendar_year}
-
-animal_rescue %>% 
-  dplyr::group_by(cal_year) %>% 
-  summarise(count=n())
-
-animal_rescue %>% 
-  count(cal_year, name="count")
-
-```
-
-Let us try to see how many incidents we have by animal group. Again, we can do this either using group_by() and summarise(), or by using count()
-
-```{r, animal_group_percentages}
-animal_rescue %>% 
-  group_by(animal_group_parent) %>% 
-  
-  #group_by and summarise will produce a new column with the count in each animal group
-  summarise(count = n()) %>% 
-  
-  # mutate adds a new column; here we calculate the percentage
-  mutate(percent = round(100*count/sum(count),2)) %>% 
-  
-  # arrange() sorts the data by percent. Since the default sorting is min to max and we would like to see it sorted
-  # in descending order (max to min), we use arrange(desc()) 
-  arrange(desc(percent))
-
-
-animal_rescue %>% 
-  
-  #count does the same thing as group_by and summarise
-  # name = "count" will call the column with the counts "count" ( exciting, I know)
-  # and 'sort=TRUE' will sort them from max to min
-  count(animal_group_parent, name="count", sort=TRUE) %>% 
-  mutate(percent = round(100*count/sum(count),2))
-
-
-```
-
-### Do you see anything strange in these tables? 
-
-There is one thing which is noticeable which is that the anumals people keep as pets having significantly higher incident rates than wild animals. It can also be inferred that maybe wild animal incidents are not reported that frquently. 
-
-Finally, let us have a loot at the notional cost for rescuing each of these animals. As the LFB says,
-
-> Please note that any cost included is a notional cost calculated based on the length of time rounded up to the nearest hour spent by Pump, Aerial and FRU appliances at the incident and charged at the current Brigade hourly rate.
-
-
-There is two things we will do:
-
-1. Calculate the mean and median `incident_notional_cost` for each `animal_group_parent`
-2. Plot a boxplot to get a feel for the distribution of `incident_notional_cost` by `animal_group_parent`.
-
-
-Before we go on, however, we need to fix `incident_notional_cost` as it is stored as a `chr`, or character, rather than a number.
-
-```{r, parse_incident_cost,message=FALSE, warning=FALSE}
-
-# what type is variable incident_notional_cost from dataframe `animal_rescue`
-typeof(animal_rescue$incident_notional_cost)
-
-# readr::parse_number() will convert any numerical values stored as characters into numbers
-animal_rescue <- animal_rescue %>% 
-
-  # we use mutate() to use the parse_number() function and overwrite the same variable
-  mutate(incident_notional_cost = parse_number(incident_notional_cost))
-
-# incident_notional_cost from dataframe `animal_rescue` is now 'double' or numeric
-typeof(animal_rescue$incident_notional_cost)
-
-```
-
-Now that incident_notional_cost is numeric, let us quickly calculate summary statistics for each animal group. This data has also been assigned to a table using the kableExtra function.
-
-
-```{r, stats_on_incident_cost,message=FALSE, warning=FALSE}
-
-sumtbl <- animal_rescue %>% 
-  
-  # group by animal_group_parent
-  group_by(animal_group_parent) %>% 
-  
-  # filter resulting data, so each group has at least 6 observations
-  filter(n()>6) %>% 
-  
-  # summarise() will collapse all values into 3 values: the mean, median, and count  
-  # we use na.rm=TRUE to make sure we remove any NAs, or cases where we do not have the incident cos
-  summarise(mean_incident_cost = mean (incident_notional_cost, na.rm=TRUE),
-            median_incident_cost = median (incident_notional_cost, na.rm=TRUE),
-            sd_incident_cost = sd (incident_notional_cost, na.rm=TRUE),
-            min_incident_cost = min (incident_notional_cost, na.rm=TRUE),
-            max_incident_cost = max (incident_notional_cost, na.rm=TRUE),
-            count = n()) %>% 
-  
-  # sort the resulting data in descending order. You choose whether to sort by count or mean cost.
-  arrange(count)
-colnames(sumtbl) <- c("Animal Group Parent","Mean Incident Notional Cost","Median Incident Notional Cost","SD Incident Notional Cost","Min Incident Notional Cost","Max Incident Notional Cost","Count")
-sumtbl %>%
-  kbl(caption = "Table 4.1") %>%
-  kable_classic(full_width = F, html_font = "Cambria")  
-```
-
-
-
-### Compare the mean and the median for each animal group. what do you think this is telling us?
-
-
-The cost is positively correlated to size of the animal. The larger size animals like cows and horses have a higher mean and median cost as compared to smaller ones like squirrels and cats. The standard deviation is also higher for these animals which might indicate that only a couple of instances might have raised the median and mean cost. 
-
-Finally, let us plot a few plots that show the distribution of incident_cost for each animal group.
-
-```{r, plots_on_incident_cost_by_animal_group,message=FALSE, warning=FALSE}
-
-# base_plot
-base_plot <- animal_rescue %>% 
-  group_by(animal_group_parent) %>% 
-  filter(n()>6) %>% 
-  ggplot(aes(x=incident_notional_cost))+
-  facet_wrap(~animal_group_parent, scales = "free")+
-  theme_bw()
-
-base_plot + geom_histogram()
-base_plot + geom_density()
-base_plot + geom_boxplot()
-base_plot + stat_ecdf(geom = "step", pad = FALSE) +
-  scale_y_continuous(labels = scales::percent)
-
-
-
-```
-
-### Which of these four graphs do you think best communicates the variability of the `incident_notional_cost` values?
-
-The boxplot is the best way to show the variability for three reasons.
-
-Firstly, it shows the outliers which helps better understand the data and remove noise from the dataset. 
-Secondly, it shows the spread based on quartile levels which can help in understanding where the proportion of incident notional cost is higest within each sub group animal. This is because it only requires sumamry statistics. 
-Lastly, the boxplot is a good indication of symmetry within our data and we can view this for all the different animals for example ferrets and snakes data shows the median very near to the upper quartile compared to a much more symmetrical median for cows and horses.
-
-
-## Details
-
-If you want to, please answer the following
-
--   Who did you collaborate with: N/A
--   Approximately how much time did you spend on this problem set: 2-3 weeks 
--   What, if anything, gave you the most trouble: Only had a problem importing data but that was easily solved with the new commands you sent to the slack messages. 
