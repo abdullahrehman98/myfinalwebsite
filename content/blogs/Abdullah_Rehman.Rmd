@@ -55,32 +55,23 @@ brexit_results%>%
                                 "UKIP"="#EFE600"))+
   labs(title = "How political affiliation translated to Brexit Voting", y="Leave % in the 2016 Brexit referendum", x="Party % in the UK 2015 general election")
 
-# histogram
-ggplot(brexit_results, aes(x = leave_share)) +
-  geom_histogram(binwidth = 2.5)+
-  labs(title = "Brexit Leave Share Mapped",
-       subtitle = "Histogram",
-       caption = "Figure 3.1",
-       x= "Leave Share (Percent of votes cast in favour of Brexit)",
-       y="Frequency of Constituencies")+
-  theme(plot.caption = element_text(hjust = 0))
 ```
 We can also create a scatterplot between these two variables using `geom_point`. We also add the best fit line, using `geom_smooth(method = "lm")`.
 
 ```{r brexit_immigration_plot,message=FALSE,warning=FALSE}
-ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
-  geom_point(alpha=0.3) +
-  
-  # add a smoothing line, and use method="lm" to get the best straight-line
-  geom_smooth(method = "lm") + 
-  
-  # use a white background and frame the plot with a black box
-  theme_bw() +
-  labs(x="Born in the UK",
-       y="Leave Share",
-       title = "Realtionship b/w the proportion of native born residents & leave share",
-       subtitle = "Scatterplot",
-       caption = 'Figure 3.4')+
-  theme(plot.caption = element_text(hjust = 0))
-  NULL
+# ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
+#   geom_point(alpha=0.3) +
+#   
+#   # add a smoothing line, and use method="lm" to get the best straight-line
+#   geom_smooth(method = "lm") + 
+#   
+#   # use a white background and frame the plot with a black box
+#   theme_bw() +
+#   labs(x="Born in the UK",
+#        y="Leave Share",
+#        title = "Realtionship b/w the proportion of native born residents & leave share",
+#        subtitle = "Scatterplot",
+#        caption = 'Figure 3.4')+
+#   theme(plot.caption = element_text(hjust = 0))
+#   NULL
 ```
