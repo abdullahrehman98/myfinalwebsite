@@ -11,9 +11,6 @@ slug: data
 title: Applied Statistics Assignment
 ---
 
-<iframe src="https://giphy.com/embed/26tn33aiTi1jkl6H6" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen>
-
-
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
 library(gapminder)  # gapminder dataset
@@ -22,7 +19,6 @@ library(janitor)
 library(knitr)
 library(ggplot2)
 library(kableExtra)
-knitr::opts_chunk$set(echo = FALSE,message = FALSE,warning = FALSE)
 
 ```
 # Brexit vote analysis

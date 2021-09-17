@@ -14,10 +14,12 @@ title: Applied Statistics Assignment
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<iframe src="https://giphy.com/embed/26tn33aiTi1jkl6H6" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen>
 <div id="brexit-vote-analysis" class="section level1">
 <h1>Brexit vote analysis</h1>
 <p>We will have a look at the results of the 2016 Brexit vote in the UK. First we read the data using <code>read_csv()</code> and have a quick glimpse at the data</p>
+<pre class="r"><code>brexit_results &lt;- read_csv(here::here(&quot;data&quot;,&quot;brexit_results.csv&quot;))
+
+glimpse(brexit_results)</code></pre>
 <pre><code>## Rows: 632
 ## Columns: 11
 ## $ Seat        &lt;chr&gt; &quot;Aldershot&quot;, &quot;Aldridge-Brownhills&quot;, &quot;Altrincham and Sale W…
@@ -36,6 +38,21 @@ title: Applied Statistics Assignment
 <p>To get a sense of the spread, or distribution, of the data, we can plot a histogram, a density plot, and the empirical cumulative distribution function of the leave % in all constituencies.</p>
 <p><img src="/blogs/Abdullah_Rehman_files/figure-html/brexit_histogram1-1.png" width="100%" /><img src="/blogs/Abdullah_Rehman_files/figure-html/brexit_histogram1-2.png" width="100%" />
 We can also create a scatterplot between these two variables using <code>geom_point</code>. We also add the best fit line, using <code>geom_smooth(method = "lm")</code>.</p>
+<pre class="r"><code>ggplot(brexit_results, aes(x = born_in_uk, y = leave_share)) +
+  geom_point(alpha=0.3) +
+  
+  # add a smoothing line, and use method=&quot;lm&quot; to get the best straight-line
+  geom_smooth(method = &quot;lm&quot;) + 
+  
+  # use a white background and frame the plot with a black box
+  theme_bw() +
+  labs(x=&quot;Born in the UK&quot;,
+       y=&quot;Leave Share&quot;,
+       title = &quot;Realtionship b/w the proportion of native born residents &amp; leave share&quot;,
+       subtitle = &quot;Scatterplot&quot;,
+       caption = &#39;Figure 3.4&#39;)+
+  theme(plot.caption = element_text(hjust = 0))</code></pre>
 <p><img src="/blogs/Abdullah_Rehman_files/figure-html/brexit_immigration_plot-1.png" width="672" /></p>
+<pre class="r"><code>  NULL</code></pre>
 <pre><code>## NULL</code></pre>
 </div>
