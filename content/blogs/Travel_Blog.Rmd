@@ -32,10 +32,14 @@ include_graphics("/img/PAK/IMG_9837.jpg", error = FALSE)
 
 ```
 
+
 ```{r, echo=FALSE, out.width='50%/2'}
 include_graphics("/img/PAK/IMG_9838.jpg", error = FALSE)
 include_graphics("/img/PAK/IMG_9839.jpg", error = FALSE)
+```
 
+
+```{r, echo=FALSE, out.width='50%/2'}
 include_graphics("/img/PAK/IMG_9841.jpg", error = FALSE)
 include_graphics("/img/PAK/IMG_9853.jpg", error = FALSE)
 ```
