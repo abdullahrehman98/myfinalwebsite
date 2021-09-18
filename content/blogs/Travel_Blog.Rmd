@@ -35,7 +35,7 @@ include_graphics("/img/PAK/IMG_9837.jpg", error = FALSE)
 ```
 
 
-```{r, echo=FALSE, out.width='50%/2'}
+```{r, echo=FALSE, out.width='50%',out.extra='style="background-color: white;padding:10px"'}
 include_graphics("/img/PAK/IMG_9838.jpg", error = FALSE)
 
 
@@ -43,7 +43,8 @@ include_graphics("/img/PAK/IMG_9839.jpg", error = FALSE)
 ```
 
 
-```{r, echo=FALSE, out.width='50%/2'}
+```{r, echo=FALSE, out.width='50%',out.extra='style="background-color: white;padding:10px"'}
+
 include_graphics("/img/PAK/IMG_9841.jpg", error = FALSE)
 
 
