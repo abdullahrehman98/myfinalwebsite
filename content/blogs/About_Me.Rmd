@@ -12,10 +12,9 @@ title: A Brief Introduction
 ---
 
 
-# Short Biography
 ## A bit about me
 
-```{r, echo=FALSE, out.width='30%',out.extra='style="background-color: white;padding:10px"',fig.align='center'}
+```{r, echo=FALSE, fig.align='center', out.width='30%',out.extra='style="background-color: white;padding:10px"'}
 
 library(knitr)
 
