@@ -16,11 +16,14 @@ title: A Brief Introduction
 ## A bit about me
 
 ```{r, echo=FALSE, out.width='30%',out.extra='style="background-color: white;padding:10px"',fig.align='center'}
+
 library(knitr)
 
 include_graphics("/img/Me.jpg", error = FALSE)
 
 ```
+
+
 My name is Abdullah Rehman as I have mentioned numerous times by now in this report. I am an incoming MAM student looking to pursue my passion for consulting. I was brought up in Pakistan but always had roots in England due to my extensive family here so decided to come her for my undergraduate studies.
 
 I did my undergrad from [**University College London**](https://www.ucl.ac.uk) in *Chemical Engineering* and graduated with a first class honors. After my undergrad, I was offered a job at Accenture which I was unable to take at the time due to a few serious family problems back home and I left England for 2 years until now. I am now keen on taking a full time consulting role and looking to do my best to earn a spot in the top tier firms. 
