@@ -12,9 +12,10 @@ title: My Travel Blog
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-
-#wasin pic10
+knitr::opts_chunk$set(echo = FALSE)
+library(knitr)    # For knitting document and include_graphics function
+library(ggplot2)  # For plotting
+library(png)      # For grabbing the 
 ```
 
 One of my biggest passions is travel and through my life, I have travelled to a number of countries.
@@ -22,7 +23,10 @@ One of my biggest passions is travel and through my life, I have travelled to a 
 # Pakistan
 
 My latest trip was in Pakistan where I went upnorth to the beautiful area of Kashmir. Here are some of my favorite pictures from here:
-
+```{r, echo = TRUE, out.width="30%"}
+myimages<-list.files("/img/PAK/", pattern = ".jpg", full.names = TRUE)
+include_graphics(myimages)
+```
 
 # France
 
