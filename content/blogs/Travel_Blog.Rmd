@@ -64,8 +64,46 @@ include_graphics("/img/FRANCE/IMG_2714.jpg", error = FALSE)
 include_graphics("/img/FRANCE/IMG_2792.jpg", error = FALSE)
 
 ```
+
 # Switzerland
+
+```{r, echo=FALSE, out.width='50%',out.extra='style="background-color: white;padding:10px"'}
+
+
+include_graphics("/img/FRANCE/IMG_2816.jpg", error = FALSE)
+include_graphics("/img/FRANCE/IMG_2821.jpg", error = FALSE)
+
+```
 
 # Scotland
 
-# India
+```{r, echo=FALSE, out.width='100%',out.extra='style="background-color: white;padding:10px"',fig.align='center'}
+
+
+include_graphics("/img/SCOT/IMG_2027.jpg", error = FALSE)
+
+```
+
+```{r, echo=FALSE, out.width='50%',out.extra='style="background-color: white;padding:10px"'}
+
+
+include_graphics("/img/SCOT/IMG_2011.jpg", error = FALSE)
+include_graphics("/img/SCOT/IMG_2077.jpg", error = FALSE)
+
+```
+
+```{r, echo=FALSE, out.width='50%',out.extra='style="background-color: white;padding:10px"'}
+
+
+include_graphics("/img/FRANCE/IMG_2816.jpg", error = FALSE)
+include_graphics("/img/FRANCE/IMG_2821.jpg", error = FALSE)
+
+```
+
+```{r, echo=FALSE, out.width='50%',out.extra='style="background-color: white;padding:10px"'}
+
+
+include_graphics("/img/FRANCE/IMG_2032.jpg", error = FALSE)
+include_graphics("/img/FRANCE/IMG_2080.jpg", error = FALSE)
+
+```
