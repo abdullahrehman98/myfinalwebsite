@@ -25,7 +25,7 @@ One of my biggest passions is travel and through my life, I have travelled to a 
 
 My latest trip was in Pakistan where I went upnorth to the beautiful area of Kashmir. Here are some of my favorite pictures from here:
 
-```{r, echo=FALSE, out.width='50%/2', fig.align = "center", out.extra='style="background-color: #9ecff7}
+```{r, echo=FALSE, out.width='50%'}
 
 include_graphics("/img/PAK/IMG_9804.jpg", error = FALSE)
 include_graphics("/img/PAK/IMG_9837.jpg", error = FALSE)
