@@ -24,7 +24,7 @@ One of my biggest passions is travel and through my life, I have travelled to a 
 # Pakistan
 
 My latest trip was in Pakistan where I went upnorth to the beautiful area of Kashmir. Here are some of my favorite pictures from here:
-```{r, echo=FALSE, out.width="100%/2"}
+```{r, echo=FALSE, out.width='50%/2'}
 # myimages <-list.files("img/PAK/", pattern = ".jpg", full.names = TRUE)
 # include_graphics(myimages)
 
@@ -38,7 +38,8 @@ include_graphics("/img/PAK/IMG_9837.jpg", error = FALSE)
 ```
 
 
-```{r, echo=FALSE, out.width='50%/3'}
+```{r, echo=FALSE, out.width='50%/4'}
+include_graphics("/img/PAK/IMG_9838.jpg", error = FALSE)
 include_graphics("/img/PAK/IMG_9839.jpg", error = FALSE)
 include_graphics("/img/PAK/IMG_9841.jpg", error = FALSE)
 include_graphics("/img/PAK/IMG_9853.jpg", error = FALSE)
