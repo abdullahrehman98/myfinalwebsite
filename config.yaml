@@ -52,10 +52,10 @@ params:
         url: https://www.instagram.com/abdullahrehman__
       - icon: fa-github
         label: GitHub
-        url: https://www.github.com
-      - icon: fa-linkedin
-        label: LinkedIn
-        url: https://www.linkedin.com
+        url: https://www.github.com/abdullahrehman98
+      # - icon: fa-linkedin
+      #   label: LinkedIn
+      #   url: https://www.linkedin.com
   image: ''
   name: Abdullah Rehman
   navigation:
