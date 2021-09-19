@@ -5,7 +5,7 @@ categories:
 date: "2017-10-31T22:42:51-05:00"
 description: Find out a bit more about me
 draft: false
-image: pic14.gif
+image: pic15.gif
 keywords: ""
 slug: about_me
 title: A Brief Introduction
