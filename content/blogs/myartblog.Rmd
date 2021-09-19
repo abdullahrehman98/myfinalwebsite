@@ -21,10 +21,13 @@ knitr::opts_chunk$set(echo = TRUE)
 My love for art stems from growing up in a household where my grandmother was an artist. She is one of my main inspirations for my artworks. 
 
 The artworks below are some of her work:
+
+
 ```{r, echo=FALSE,fig.align='center', out.width='50%',out.extra='style="background-color: white;padding:10px"'}
 #out.width="70%"
 knitr::include_graphics("/img/ART/IMG_5567.jpg", error = FALSE)
 ```
+
 
 ```{r, echo=FALSE,fig.align='center', out.width='50%',out.extra='style="background-color: white;padding:10px"'}
 #out.width="70%"
