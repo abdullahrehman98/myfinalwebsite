@@ -5,7 +5,7 @@ categories:
 date: "2017-10-31T22:26:09-05:00"
 description: This is a data analytics assignment 
 draft: false
-image: pic09.jpg
+image: stats.gif
 keywords: ""
 slug: data
 title: Applied Statistics Assignment
@@ -227,7 +227,9 @@ brexit_results%>%
                                 "Lib Dems"="#FDBB30",
                                 "UKIP"="#EFE600"))+
   labs(title = "How political affiliation translated to Brexit Voting", y="Leave % in the 2016 Brexit referendum", x="Party % in the UK 2015 general election",
-       caption = "Figure ")
+       caption = "Figure 4 ") +
+  theme(plot.caption = element_text(hjust = 0))+
+  NULL 
 
 ```
 
