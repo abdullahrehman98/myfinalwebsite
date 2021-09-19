@@ -24,7 +24,7 @@ params:
         title: Email
     enable: yes
     phone:
-      - phone: (000) 000-0000 x1234
+      - phone: +44 (0) 780-2476244 
         title: Phone
   custom_css: []
   custom_js: []
@@ -49,7 +49,7 @@ params:
         url: https://www.facebook.com
       - icon: fa-instagram
         label: Instagram
-        url: https://www.instagram.com
+        url: https://www.instagram.com/abdullahrehman__
       - icon: fa-github
         label: GitHub
         url: https://www.github.com
