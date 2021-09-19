@@ -16,21 +16,114 @@ title: Applied Statistics Assignment
 
 <div id="brexit-vote-analysis" class="section level1">
 <h1>Brexit vote analysis</h1>
-<p>We will have a look at the results of the 2016 Brexit vote in the UK.</p>
-<pre><code>## Rows: 632
-## Columns: 11
-## $ Seat        &lt;chr&gt; &quot;Aldershot&quot;, &quot;Aldridge-Brownhills&quot;, &quot;Altrincham and Sale W…
-## $ con_2015    &lt;dbl&gt; 50.592, 52.050, 52.994, 43.979, 60.788, 22.418, 52.454, 22…
-## $ lab_2015    &lt;dbl&gt; 18.333, 22.369, 26.686, 34.781, 11.197, 41.022, 18.441, 49…
-## $ ld_2015     &lt;dbl&gt; 8.824, 3.367, 8.383, 2.975, 7.192, 14.828, 5.984, 2.423, 1…
-## $ ukip_2015   &lt;dbl&gt; 17.867, 19.624, 8.011, 15.887, 14.438, 21.409, 18.821, 21.…
-## $ leave_share &lt;dbl&gt; 57.89777, 67.79635, 38.58780, 65.29912, 49.70111, 70.47289…
-## $ born_in_uk  &lt;dbl&gt; 83.10464, 96.12207, 90.48566, 97.30437, 93.33793, 96.96214…
-## $ male        &lt;dbl&gt; 49.89896, 48.92951, 48.90621, 49.21657, 48.00189, 49.17185…
-## $ unemployed  &lt;dbl&gt; 3.637000, 4.553607, 3.039963, 4.261173, 2.468100, 4.742731…
-## $ degree      &lt;dbl&gt; 13.870661, 9.974114, 28.600135, 9.336294, 18.775591, 6.085…
-## $ age_18to24  &lt;dbl&gt; 9.406093, 7.325850, 6.437453, 7.747801, 5.734730, 8.209863…</code></pre>
+<p>For one assignment, we were required to recreate the political affiliation
+We will have a look at the results of the 2016 Brexit vote in the UK.</p>
 <p>The data comes from <a href="https://www.thecrosstab.com/">Elliott Morris</a>, who cleaned it and made it available through his <a href="https://www.datacamp.com/courses/analyzing-election-and-polling-data-in-r">DataCamp class on analysing election and polling data in R</a>.</p>
-<p><img src="/blogs/Abdullah_Rehman_files/figure-html/brexit_histogram1-1.png" width="100%" />
-We can also create a scatterplot between these two variables using <code>geom_point</code>. We also add the best fit line, using <code>geom_smooth(method = "lm")</code>.</p>
+<p><img src="/blogs/Abdullah_Rehman_files/figure-html/brexit_histogram1-1.png" width="100%" /></p>
+<div id="data-project-2" class="section level2">
+<h2>DATA PROJECT 2</h2>
+<p>The first thing you need to do is to tidy the data, as it is in wide format and you must make it into long, tidy format. Please express all figures in billions (divide values by <code>1e9</code>, or <span class="math inline">\(10^9\)</span>), and you want to rename the indicators into something shorter.</p>
+<pre><code>## Rows: 176,880
+## Columns: 5
+## $ CountryID     &lt;dbl&gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,…
+## $ Country       &lt;chr&gt; &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanistan&quot;, &quot;Afghanista…
+## $ IndicatorName &lt;chr&gt; &quot;Final consumption expenditure&quot;, &quot;Final consumption expe…
+## $ year          &lt;chr&gt; &quot;1970&quot;, &quot;1971&quot;, &quot;1972&quot;, &quot;1973&quot;, &quot;1974&quot;, &quot;1975&quot;, &quot;1976&quot;, …
+## $ value         &lt;dbl&gt; 5.559069, 5.332823, 5.197066, 5.746510, 6.147288, 6.3217…</code></pre>
+<p>First, can you produce this plot?</p>
+<p><img src="/Users/abdullahrehman/Desktop/LBS MAM Courses /Applied Statistics AM01 AUT21 /Homework 2/Final Website/myfinalwebsite/images/gdp1.png" width="100%" /></p>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="/blogs/Abdullah_Rehman_files/figure-html/gdp1-2.png" width="100%" /></p>
+<p>Secondly, recall that GDP is the sum of Household Expenditure (Consumption <em>C</em>), Gross Capital Formation (business investment <em>I</em>), Government Expenditure (G) and Net Exports (exports - imports). Even though there is an indicator <code>Gross Domestic Product (GDP)</code> in your dataframe, I would like you to calculate it given its components discussed above.</p>
+<blockquote>
+<p>What is the % difference between what you calculated as GDP and the GDP figure included in the dataframe?</p>
+</blockquote>
+<p>As calculated below, For Germay, the % difference range from 1.0% to 1.04%. THe India range from 1.08% to 0.0%. United States range from 1.0% to 1.04%.</p>
+<p><img src="/Users/abdullahrehman/Desktop/LBS MAM Courses /Applied Statistics AM01 AUT21 /Homework 2/Final Website/myfinalwebsite/images/gdp2.png" width="100%" /></p>
+<pre><code>## `summarise()` has grouped output by &#39;year&#39;. You can override using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;year&#39;, &#39;Country&#39;. You can override using the `.groups` argument.</code></pre>
+<p><img src="/blogs/Abdullah_Rehman_files/figure-html/gdp2-2.png" width="100%" /></p>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48
+
+## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
+## parametric, : Chernobyl! trL&gt;n 48</code></pre>
+<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
+<p><img src="/blogs/Abdullah_Rehman_files/figure-html/gdp2-3.png" width="100%" /></p>
+<blockquote>
+<p>What is this last chart telling you? Can you explain in a couple of paragraphs the different dynamic among these three countries?</p>
+</blockquote>
+<blockquote>
+<p>Looking at Germany’s GDP breakdown, it’s interesting to note that household expenditures kept a quite steady proportion throughout the whole period, except around the 2008 financial crisis, of which the impact is quite noticeable for all three countries, with Germany’s gross capital formation also having a clear dip around that time. Germany being the only out of the three countries that is part of the European union, it is also interesting to note their exports increasing after the Maastricht, Amsterdam and Lisbon treaties were put into place. On a different note, we would also expect the reunification of the west and east Germanies to have a clear impact on the proportion of government expenditure, yet there does not seem to be.</p>
+<p>India’s GDP breakdown is quite different from Germany’s. The 2008 financial crisis is quite noticeable as well and seems to particularly have impacted exports, as other countries lost disposable income. It is interesting to note that the government expenditure is around 15% of the GDP throughout the whole period, yet that gross capital formation gains a bigger proportion whilst the proportion of household expenditure keeps on decreasing. We can infer that this is due to a growing population, with increased inequalities; bigger companies and more billionaires, but also more poverty, resulting in less household expenditure.</p>
+<p>The United States’ GDP split also showcases the impact of the 2008’s financial crisis, for instance with the Federal Reserve’s help towards the bank creating a small red bump in the late 2000s, early 2010s. Overall, government expenditure’s proportion kept on decreasing as republicans were in office, reducing government spending. It is interesting to note that other major financial crisis did not really impact the way the GDP is split up (2001, 1987).</p>
+</blockquote>
+</div>
 </div>
