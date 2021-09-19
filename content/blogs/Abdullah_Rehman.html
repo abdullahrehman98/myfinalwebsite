@@ -14,15 +14,15 @@ title: Applied Statistics Assignment
 <script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
-<div id="brexit-vote-analysis" class="section level1">
-<h1>Brexit vote analysis</h1>
-<p>For one assignment, we were required to recreate the political affiliation
-We will have a look at the results of the 2016 Brexit vote in the UK.</p>
-<p>The data comes from <a href="https://www.thecrosstab.com/">Elliott Morris</a>, who cleaned it and made it available through his <a href="https://www.datacamp.com/courses/analyzing-election-and-polling-data-in-r">DataCamp class on analysing election and polling data in R</a>.</p>
-<p><img src="/blogs/Abdullah_Rehman_files/figure-html/brexit_histogram1-1.png" width="100%" /></p>
+<blockquote>
+<p>This page contains two projects from the London Business School Applied Statistics Module.</p>
+</blockquote>
+<div id="data-analysis-project-gdp-components-over-time-and-among-countries" class="section level2">
+<h2>Data Analysis Project: GDP components over time and among countries</h2>
+</div>
 <div id="data-project-2" class="section level2">
 <h2>DATA PROJECT 2</h2>
-<p>The first thing you need to do is to tidy the data, as it is in wide format and you must make it into long, tidy format. Please express all figures in billions (divide values by <code>1e9</code>, or <span class="math inline">\(10^9\)</span>), and you want to rename the indicators into something shorter.</p>
+<p>The first thing to do for this project was to tidy the data, as it was in wide format and we had to make it into long, tidy format alongside making the values more readable since the figures were too big. We are able to view the results as shown below using the glimpse function on our tidy data set.</p>
 <pre><code>## Rows: 176,880
 ## Columns: 5
 ## $ CountryID     &lt;dbl&gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,…
@@ -30,93 +30,17 @@ We will have a look at the results of the 2016 Brexit vote in the UK.</p>
 ## $ IndicatorName &lt;chr&gt; &quot;Final consumption expenditure&quot;, &quot;Final consumption expe…
 ## $ year          &lt;chr&gt; &quot;1970&quot;, &quot;1971&quot;, &quot;1972&quot;, &quot;1973&quot;, &quot;1974&quot;, &quot;1975&quot;, &quot;1976&quot;, …
 ## $ value         &lt;dbl&gt; 5.559069, 5.332823, 5.197066, 5.746510, 6.147288, 6.3217…</code></pre>
-<p>First, can you produce this plot?</p>
-<p><img src="/Users/abdullahrehman/Desktop/LBS MAM Courses /Applied Statistics AM01 AUT21 /Homework 2/Final Website/myfinalwebsite/images/gdp1.png" width="100%" /></p>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<p><img src="/blogs/Abdullah_Rehman_files/figure-html/gdp1-2.png" width="100%" /></p>
-<p>Secondly, recall that GDP is the sum of Household Expenditure (Consumption <em>C</em>), Gross Capital Formation (business investment <em>I</em>), Government Expenditure (G) and Net Exports (exports - imports). Even though there is an indicator <code>Gross Domestic Product (GDP)</code> in your dataframe, I would like you to calculate it given its components discussed above.</p>
-<blockquote>
-<p>What is the % difference between what you calculated as GDP and the GDP figure included in the dataframe?</p>
-</blockquote>
-<p>As calculated below, For Germay, the % difference range from 1.0% to 1.04%. THe India range from 1.08% to 0.0%. United States range from 1.0% to 1.04%.</p>
-<p><img src="/Users/abdullahrehman/Desktop/LBS MAM Courses /Applied Statistics AM01 AUT21 /Homework 2/Final Website/myfinalwebsite/images/gdp2.png" width="100%" /></p>
-<pre><code>## `summarise()` has grouped output by &#39;year&#39;. You can override using the `.groups` argument.</code></pre>
-<pre><code>## `summarise()` has grouped output by &#39;year&#39;, &#39;Country&#39;. You can override using the `.groups` argument.</code></pre>
-<p><img src="/blogs/Abdullah_Rehman_files/figure-html/gdp2-2.png" width="100%" /></p>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<pre><code>## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48
-
-## Warning in simpleLoess(y, x, w, span, degree = degree, parametric =
-## parametric, : Chernobyl! trL&gt;n 48</code></pre>
-<pre><code>## Warning in sqrt(sum.squares/one.delta): NaNs produced</code></pre>
-<p><img src="/blogs/Abdullah_Rehman_files/figure-html/gdp2-3.png" width="100%" /></p>
+<p>Next we compared the GDP data of three countries:
+* United States
+* India
+* Germany</p>
+<p>The results were plotted using the ggplot function in R with indicator name being used as the color parameter as this allows for easier comparison.</p>
+<p><img src="/blogs/Abdullah_Rehman_files/figure-html/gdp1-1.png" width="100%" /></p>
+<p>We know that GDP is the sum of Household Expenditure (Consumption <em>C</em>), Gross Capital Formation (business investment <em>I</em>), Government Expenditure (G) and Net Exports (exports - imports).</p>
+<p>The next task was to calculate the GDP given the components in the dataframe and compare it with the indicator shown above.</p>
+<p>As calculated below, For Germany, the % difference range from 1.0% to 1.04%. The India range from 1.08% to 0.0%. United States range from 1.0% to 1.04%.</p>
+<p>We did this by first filtering out exports, imports, household expenditure, government expenditure, gross capital formation. Then we use left join in a number of steps to calculate the net exports and select only the required column. We also convert the type to numeric for the year column as it is a numeric type variable. Now we plot the</p>
+<p><img src="/blogs/Abdullah_Rehman_files/figure-html/gdp2-1.png" width="100%" /><img src="/blogs/Abdullah_Rehman_files/figure-html/gdp2-2.png" width="100%" /></p>
 <blockquote>
 <p>What is this last chart telling you? Can you explain in a couple of paragraphs the different dynamic among these three countries?</p>
 </blockquote>
@@ -126,4 +50,11 @@ We will have a look at the results of the 2016 Brexit vote in the UK.</p>
 <p>The United States’ GDP split also showcases the impact of the 2008’s financial crisis, for instance with the Federal Reserve’s help towards the bank creating a small red bump in the late 2000s, early 2010s. Overall, government expenditure’s proportion kept on decreasing as republicans were in office, reducing government spending. It is interesting to note that other major financial crisis did not really impact the way the GDP is split up (2001, 1987).</p>
 </blockquote>
 </div>
+<div id="brexit-vote-analysis" class="section level1">
+<h1>Brexit vote analysis</h1>
+<p>For one assignment, we were required to recreate the political affiliation
+We will have a look at the results of the 2016 Brexit vote in the UK.</p>
+<p>The data comes from <a href="https://www.thecrosstab.com/">Elliott Morris</a>, who cleaned it and made it available through his <a href="https://www.datacamp.com/courses/analyzing-election-and-polling-data-in-r">DataCamp class on analysing election and polling data in R</a>.</p>
+<p>The plot below was plotted using the ggplot function and using color to seperate the different parties.</p>
+<p><img src="/blogs/Abdullah_Rehman_files/figure-html/brexit_histogram1-1.png" width="100%" /></p>
 </div>

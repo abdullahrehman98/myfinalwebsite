@@ -10,6 +10,9 @@ keywords: ""
 slug: data
 title: Applied Statistics Assignment
 ---
+> This page contains two projects from the London Business School Applied Statistics Module.
+
+## Data Analysis Project: GDP components over time and among countries
 
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
@@ -28,47 +31,8 @@ library(broom)
 library(tidyquant)
 library(infer)
 library(openintro)
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = FALSE,warning = FALSE,message = FALSE)
 ```
-
-# Brexit vote analysis
-
-For one assignment, we were required to recreate the political affiliation
-We will have a look at the results of the 2016 Brexit vote in the UK. 
-
-```{r load_brexit_data, warning=FALSE, message=FALSE,echo=FALSE}
-brexit_results <- read_csv(here::here("data","brexit_results.csv"))
-
-```
-
-The data comes from [Elliott Morris](https://www.thecrosstab.com/), who cleaned it and made it available through his [DataCamp class on analysing election and polling data in R](https://www.datacamp.com/courses/analyzing-election-and-polling-data-in-r).
-
-
-```{r brexit_histogram1, warning=FALSE, message=FALSE,echo=FALSE, out.width="100%"}
-
-brexit_results%>%
-  
-  ggplot(aes())+
-  geom_point(aes(x=con_2015,y=leave_share, color="Conservative"),alpha=0.5,size=0.8)+
-  geom_point(aes(x=lab_2015,y=leave_share,color="Labour"),alpha=0.5,size=0.8)+
-  geom_point(aes(x=ld_2015, y=leave_share,color="Lib Dems"),alpha=0.5,size=0.8)+
-  geom_point(aes(x=ukip_2015, y=leave_share,color="UKIP"),alpha=0.5,size=0.8)+
-  geom_smooth(aes(x=con_2015,y=leave_share),method=lm, color="#0087dc")+
-  geom_smooth(aes(x=lab_2015,y=leave_share),method=lm,color="#d50000")+
-  geom_smooth(aes(x=ld_2015,y=leave_share),method=lm, color="#FDBB30")+
-  geom_smooth(aes(x=ukip_2015,y=leave_share),method=lm, color="#EFE600")+
-  
-  scale_color_manual(name="",
-                     values = c("Conservative"="#0087dc",
-                                "Labour"="#d50000",
-                                "Lib Dems"="#FDBB30",
-                                "UKIP"="#EFE600"))+
-  labs(title = "How political affiliation translated to Brexit Voting", y="Leave % in the 2016 Brexit referendum", x="Party % in the UK 2015 general election")
-
-```
-
-
-
 
 ## DATA PROJECT 2
 
@@ -82,8 +46,7 @@ UN_GDP_data  <-  read_excel(here::here("data", "Download-GDPconstant-USD-countri
 
 ```
 
- The first thing you need to do is to tidy the data, as it is in wide format and you must make it into long, tidy format. Please express all figures in billions (divide values by `1e9`, or $10^9$), and you want to rename the indicators into something shorter.
-
+The first thing to do for this project was to tidy the data, as it was in wide format and we had to make it into long, tidy format alongside making the values more readable since the figures were too big. We are able to view the results as shown below using the glimpse function on our tidy data set.
 
 ```{r reshape_GDP_data}
 
@@ -97,6 +60,7 @@ tidy_GDP_data  <-  UN_GDP_data %>%
          IndicatorName = replace(IndicatorName, IndicatorName == "Household consumption expenditure (including Non-profit institutions serving households)", 'Household expenditure'),
          IndicatorName = replace(IndicatorName, IndicatorName == 'Imports of goods and services', 'Imports'))
 
+
 glimpse(tidy_GDP_data)
 
 # Let us compare GDP components for these 3 countries
@@ -104,12 +68,15 @@ country_list <- c("United States","India", "Germany")
 
 ```
 
-First, can you produce this plot?
+Next we compared the GDP data of three countries:
+* United States
+* India
+* Germany
 
+The results were plotted using the ggplot function in R with indicator name being used as the color parameter as this allows for easier comparison. 
 
 ```{r gdp1, echo=FALSE, out.width="100%"}
-knitr::include_graphics(here::here("images", "gdp1.png"), error = FALSE)
-# clean data
+
 clean_table <- tidy_GDP_data %>% filter(Country %in% c("United States","India", "Germany"), IndicatorName %in% c("Gross capital formation", "Exports", "Government expenditure", "Household expenditure","Imports", ""), year                                  >=1970) %>% mutate(year = as.numeric(year)) 
 
 # plot
@@ -120,22 +87,24 @@ clean_table %>% ggplot(aes(x = year, y = value, colour = IndicatorName, group = 
     title = "GDP Components over time",
     subtitle = "In constant 2010 USD",
     x = NULL,
-    y = "Billion US$"
+    y = "Billion US$",
+    caption = "Figure 1"
   ) +
   theme_bw() +
+  theme(plot.caption = element_text(hjust = 0))+
   NULL
 ```
 
 
-Secondly, recall that GDP is the sum of Household Expenditure (Consumption *C*), Gross Capital Formation (business investment *I*), Government Expenditure (G) and Net Exports (exports - imports). Even though there is an indicator `Gross Domestic Product (GDP)` in your dataframe, I would like you to calculate it given its components discussed above.
+We know that GDP is the sum of Household Expenditure (Consumption *C*), Gross Capital Formation (business investment *I*), Government Expenditure (G) and Net Exports (exports - imports). 
 
-> What is the % difference between what you calculated as GDP and the GDP figure included in the dataframe?
+The next task was to calculate the GDP given the components in the dataframe and compare it with the indicator shown above.
 
-As calculated below, For Germay, the % difference range from 1.0% to 1.04%. THe India range from 1.08% to 0.0%. United States range from 1.0% to 1.04%.
+As calculated below, For Germany, the % difference range from 1.0% to 1.04%. The India range from 1.08% to 0.0%. United States range from 1.0% to 1.04%.
 
+We did this by first filtering out exports, imports, household expenditure, government expenditure, gross capital formation. Then we use left join in a number of steps to calculate the net exports and select only the required column. We also convert the type to numeric for the year column as it is a numeric type variable. Now we plot the
 
 ```{r gdp2, echo=FALSE, out.width="100%"}
-knitr::include_graphics(here::here("images", "gdp2.png"), error = FALSE)
 
 # calculate GDP
 export <- clean_table %>% 
@@ -153,6 +122,7 @@ Government_expenditure <- clean_table %>%
 Gross_capital_formation <- clean_table %>% 
   filter(IndicatorName == "Gross capital formation") %>% 
   rename("Gross capital formation" = "value")
+
 net_exports <- left_join(export, import, by = c("year", "Country")) %>% 
   mutate(net_exports = value.x - value.y) %>% 
   select(year, Country, net_exports)
@@ -187,9 +157,11 @@ compare_GDP %>%
   geom_line(aes(x = year, y = percent_diff)) +
   facet_wrap(~Country) +
   labs(
-    title = " % difference between what you calculated as GDP and the GDP figure included in the dataframe"
+    title = " % Difference b/w calculated  GDP and the dataset GDP figure",
+    caption = "Figure 2"
   ) +
   theme_bw()+
+  theme(plot.caption = element_text(hjust = 0))+
   NULL
 
 # plot proportion 
@@ -200,9 +172,11 @@ proportion_table %>%
   labs(
     title = "GDP and Its breakdown at constant 2010 prices in US Dollars",
     x = NULL,
-    y = "proportion"
+    y = "proportion",
+    caption = "Figure 3"
   ) +
   theme_bw() +
+  theme(plot.caption = element_text(hjust = 0))+
   NULL 
 ```
 
@@ -215,6 +189,47 @@ proportion_table %>%
 >India’s GDP breakdown is quite different from Germany’s. The 2008 financial crisis is quite noticeable as well and seems to particularly have impacted exports, as other countries lost disposable income. It is interesting to note that the government expenditure is around 15% of the GDP throughout the whole period, yet that gross capital formation gains a bigger proportion whilst the proportion of household expenditure keeps on decreasing. We can infer that this is due to a growing population, with increased inequalities; bigger companies and more billionaires, but also more poverty, resulting in less household expenditure. 
 >
 >The United States’ GDP split also showcases the impact of the 2008’s financial crisis, for instance with the Federal Reserve’s help towards the bank creating a small red bump in the late 2000s, early 2010s. Overall, government expenditure’s proportion kept on decreasing as republicans were in office, reducing government spending. It is interesting to note that other major financial crisis did not really impact the way the GDP is split up (2001, 1987).
+
+
+# Brexit vote analysis
+
+For one assignment, we were required to recreate the political affiliation
+We will have a look at the results of the 2016 Brexit vote in the UK. 
+
+```{r load_brexit_data, warning=FALSE, message=FALSE,echo=FALSE}
+brexit_results <- read_csv(here::here("data","brexit_results.csv"))
+
+```
+
+The data comes from [Elliott Morris](https://www.thecrosstab.com/), who cleaned it and made it available through his [DataCamp class on analysing election and polling data in R](https://www.datacamp.com/courses/analyzing-election-and-polling-data-in-r).
+
+The plot below was plotted using the ggplot function and using color to seperate the different parties. 
+
+
+
+```{r brexit_histogram1, warning=FALSE, message=FALSE,echo=FALSE, out.width="100%"}
+
+brexit_results%>%
+  
+  ggplot(aes())+
+  geom_point(aes(x=con_2015,y=leave_share, color="Conservative"),alpha=0.5,size=0.8)+
+  geom_point(aes(x=lab_2015,y=leave_share,color="Labour"),alpha=0.5,size=0.8)+
+  geom_point(aes(x=ld_2015, y=leave_share,color="Lib Dems"),alpha=0.5,size=0.8)+
+  geom_point(aes(x=ukip_2015, y=leave_share,color="UKIP"),alpha=0.5,size=0.8)+
+  geom_smooth(aes(x=con_2015,y=leave_share),method=lm, color="#0087dc")+
+  geom_smooth(aes(x=lab_2015,y=leave_share),method=lm,color="#d50000")+
+  geom_smooth(aes(x=ld_2015,y=leave_share),method=lm, color="#FDBB30")+
+  geom_smooth(aes(x=ukip_2015,y=leave_share),method=lm, color="#EFE600")+
+  
+  scale_color_manual(name="",
+                     values = c("Conservative"="#0087dc",
+                                "Labour"="#d50000",
+                                "Lib Dems"="#FDBB30",
+                                "UKIP"="#EFE600"))+
+  labs(title = "How political affiliation translated to Brexit Voting", y="Leave % in the 2016 Brexit referendum", x="Party % in the UK 2015 general election",
+       caption = "Figure ")
+
+```
 
 
 
