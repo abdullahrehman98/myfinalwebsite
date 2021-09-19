@@ -68,8 +68,6 @@ params:
     links:
       - name: Home
         url: '#'
-      - name: Blogs
-        url: blogs
       - name: About Me
         url: blogs/about_me
       - name: My Art Blog
