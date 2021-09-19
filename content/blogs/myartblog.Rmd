@@ -13,7 +13,7 @@ title: Art Portfolio
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE,fig.align = 'center')
 #image: pic08.jpg
 
 ```
@@ -24,13 +24,13 @@ The artworks below are some of her work:
 
 
 ```{r, echo=FALSE,fig.align='center', out.width='50%',out.extra='style="background-color: white;padding:10px"'}
-#out.width="70%"
+
 knitr::include_graphics("/img/ART/IMG_5567.jpg", error = FALSE)
 ```
 
 
 ```{r, echo=FALSE,fig.align='center', out.width='50%',out.extra='style="background-color: white;padding:10px"'}
-#out.width="70%"
+
 # knitr::include_graphics("/img/ART/IMG_5567.jpg", error = FALSE)
 
 knitr::include_graphics("/img/ART/IMG_5564.jpg", error = FALSE)
