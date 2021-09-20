@@ -111,7 +111,7 @@ params:
   two:
     buttonText: Take me there
     enable: yes
-    image: pak2.gif
+    banner: pak2.gif
     subtitle: "Navigate to my resume"
     title: Curriculum Vitae
     url: blogs/resume
