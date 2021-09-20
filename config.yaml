@@ -28,7 +28,7 @@ params:
         title: Phone
   custom_css: []
   custom_js: []
-  description: Your description
+  description: A Personal Portfolio for Abdullah Rehman
   error404:
     heading: Page couldn't be found
     text: Please visit [this page](/)
@@ -111,6 +111,7 @@ params:
   two:
     buttonText: Take me there
     enable: yes
+    image: pak2.gif
     subtitle: "Navigate to my resume"
     title: Curriculum Vitae
     url: blogs/resume

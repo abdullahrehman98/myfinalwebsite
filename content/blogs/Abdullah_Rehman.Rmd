@@ -12,7 +12,7 @@ title: Applied Statistics Assignment
 ---
 > This page contains two projects from the London Business School Applied Statistics Module.
 
-## Data Analysis Project: GDP components over time and among countries
+# Data Analysis Project: GDP components over time and among countries
 
 ```{r load-libraries, warning=FALSE, message=FALSE, echo=FALSE}
 library(tidyverse)  # Load ggplot2, dplyr, and all the other tidyverse packages
@@ -34,7 +34,6 @@ library(openintro)
 knitr::opts_chunk$set(echo = FALSE,warning = FALSE,message = FALSE)
 ```
 
-## DATA PROJECT 2
 
 ```{r read_GDP_data}
 
@@ -91,7 +90,8 @@ clean_table %>% ggplot(aes(x = year, y = value, colour = IndicatorName, group = 
     caption = "Figure 1"
   ) +
   theme_bw() +
-  theme(plot.caption = element_text(hjust = 0))+
+  theme(plot.caption = element_text(hjust = 0),
+        axis.text = element_text(size=5))+
   NULL
 ```
 
@@ -170,27 +170,28 @@ proportion_table %>%
   geom_smooth(aes(x = year, y = proportion), se = FALSE, span = 0.1) +
   facet_wrap(~ Country) +
   labs(
-    title = "GDP and Its breakdown at constant 2010 prices in US Dollars",
+    title = "GDP and Its' breakdown at constant 2010 prices in US Dollars",
     x = NULL,
-    y = "proportion",
+    y = "Proportion",
     caption = "Figure 3"
   ) +
   theme_bw() +
-  theme(plot.caption = element_text(hjust = 0))+
+  theme(plot.caption = element_text(hjust = 0),
+        axis.text = element_text(size=5))+
   NULL 
 ```
 
+## Analysis of data
+
+> What are these charts telling us? We can now explain in a couple of paragraphs the different dynamic among these three countries 
 
 
-> What is this last chart telling you? Can you explain in a couple of paragraphs the different dynamic among these three countries? 
 
+>If we were to look at Germany’s GDP breakdown, we can note that household expenditures kept a quite steady proportion throughout the whole period, except around the 2008 financial crisis, of which the impact is quite noticeable for all three countries, with Germany’s gross capital formation also having a clear dip around that time. Germany being the only out of the three countries that is part of the European union, it is also interesting to note their exports increasing after the Maastricht, Amsterdam and Lisbon treaties were put into place. On a different note, we would also expect the reunification of the west and east Germanies to have a clear impact on the proportion of government expenditure, yet there does not seem to be.
 
+>India’s GDP breakdown is noticeably different from Germany’s. The 2008 financial crisis is quite apparent as well and seems to particularly have impacted exports, as other countries lost disposable income. Although government expenditure is around 15% of the GDP throughout the whole period, gross capital formation gains a bigger proportion whilst the proportion of household expenditure goes down.  We can deduce that this can be attributed to a growing population, with increased inequalities; bigger companies and more billionaires, but also more poverty, resulting in less household expenditure. 
 
->Looking at Germany’s GDP breakdown, it’s interesting to note that household expenditures kept a quite steady proportion throughout the whole period, except around the 2008 financial crisis, of which the impact is quite noticeable for all three countries, with Germany’s gross capital formation also having a clear dip around that time. Germany being the only out of the three countries that is part of the European union, it is also interesting to note their exports increasing after the Maastricht, Amsterdam and Lisbon treaties were put into place. On a different note, we would also expect the reunification of the west and east Germanies to have a clear impact on the proportion of government expenditure, yet there does not seem to be.
->
->India’s GDP breakdown is quite different from Germany’s. The 2008 financial crisis is quite noticeable as well and seems to particularly have impacted exports, as other countries lost disposable income. It is interesting to note that the government expenditure is around 15% of the GDP throughout the whole period, yet that gross capital formation gains a bigger proportion whilst the proportion of household expenditure keeps on decreasing. We can infer that this is due to a growing population, with increased inequalities; bigger companies and more billionaires, but also more poverty, resulting in less household expenditure. 
->
->The United States’ GDP split also showcases the impact of the 2008’s financial crisis, for instance with the Federal Reserve’s help towards the bank creating a small red bump in the late 2000s, early 2010s. Overall, government expenditure’s proportion kept on decreasing as republicans were in office, reducing government spending. It is interesting to note that other major financial crisis did not really impact the way the GDP is split up (2001, 1987).
+>The impact of the 2008’s financial crisis can be  seen on the United States’ GDP split with the Federal Reserve’s help towards the bank creating a small red bump in the late 2000s, early 2010s. Government expenditure’s proportion decreased as republicans were in office, reducing government spending. Comapring to India, household expenditure went up in the US whereas it went down for India. It is also interesting to note that other major financial crisis did not really impact the way the GDP is split up (2001, 1987).
 
 
 # Brexit vote analysis
@@ -205,8 +206,9 @@ brexit_results <- read_csv(here::here("data","brexit_results.csv"))
 
 The data comes from [Elliott Morris](https://www.thecrosstab.com/), who cleaned it and made it available through his [DataCamp class on analysing election and polling data in R](https://www.datacamp.com/courses/analyzing-election-and-polling-data-in-r).
 
-The plot below was plotted using the ggplot function and using color to seperate the different parties. 
+The plot below was plotted using the ggplot function and the color parameter was used to seperate the different parties. 
 
+We can see from the plot that UKIP has the steepest line with almost 100% leave vote in the referendum so constiutuencies where people voted highly for UKIP had a high leave share percentage as well. Labour on the other hand does not show any strong correlation with a relatively flat line. 
 
 
 ```{r brexit_histogram1, warning=FALSE, message=FALSE,echo=FALSE, out.width="100%"}
