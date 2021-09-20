@@ -60,7 +60,7 @@ params:
   name: Abdullah Rehman
   navigation:
     button1:
-      - name: Get Started
+      - name: Quick Links
         url: blogs
     # button2:
     #   - name: Log In
@@ -111,7 +111,6 @@ params:
   two:
     buttonText: Take me there
     enable: yes
-    banner: pak2.gif
     subtitle: "Navigate to my resume"
     title: Curriculum Vitae
     url: blogs/resume
