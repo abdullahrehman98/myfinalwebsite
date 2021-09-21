@@ -100,14 +100,6 @@ params:
         subtitle: A glimpse of all my adventures to date
         title: My Travel Blog
         url: blogs/travel
-      # - image: pic05.jpg
-      #   subtitle: Ipsum Dolor Sit Amet
-      #   title: Consequat
-      #   url: blogs/ipsum
-      # # - image: pic06.jpg
-      #   subtitle: Feugiat Amet Tempus
-      #   title: Etiam
-      #   url: blogs/ipsum
   two:
     buttonText: Take me there
     enable: yes
